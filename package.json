@@ -1,0 +1,23 @@
+{
+  "name": "knight-travails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hattima-tim/knight-travails.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hattima-tim/knight-travails/issues"
+  },
+  "homepage": "https://github.com/hattima-tim/knight-travails#readme",
+  "devDependencies": {
+    "jest": "^29.2.2"
+  }
+}
