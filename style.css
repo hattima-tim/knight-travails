@@ -1,0 +1,16 @@
+#gameboard_container{
+    display: flex;
+    width: 100%;
+    height: 30rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameboard{
+    height: 20rem;
+    width: 20rem;
+}
+
+.square_div{
+    border: 1px solid black;
+}
