@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
 const squares = [];
@@ -75,8 +74,6 @@ function knightMoves(start, end, queue = [start], path = [], recCount = 1) {
 
   if (recCount === 2 || recCount === 1) { // means we are on the first call of knightMoves
     path.reverse();
-    console.log(`You made it in ${path.length - 1} moves! Here's your path:`);
-    console.log(path);
     return {
       movesCount: path.length - 1,
       path,
