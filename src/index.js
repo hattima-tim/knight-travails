@@ -1,3 +1,4 @@
+import createDragDropFunctionality from './dragDrop';
 import knightMoves from './knightTravails';
 
 const gameboard = document.querySelector('#gameboard');
@@ -34,6 +35,7 @@ const createGameBoardDom = () => {
     if (i === 0) {
       const knightIcon = createKnight(i, yAxis);
       squareDiv[i].appendChild(knightIcon);
+      createDragDropFunctionality(knightIcon);
     }
 
     squareDiv[i].setAttribute('data-index', `${[i, yAxis]}`);
