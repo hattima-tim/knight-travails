@@ -27,36 +27,40 @@ const removePrevEndPoint = () => {
 };
 
 let endPoint = null;
-const createGameBoardSquares = (i) => {
-  const squareDiv = [];
+const addNewEndPoint = (e) => {
+  removePrevEndPoint();
+
+  e.target.classList.add('endPoint');
+  e.target.style.background = 'red';
+  endPoint = e.target.dataset.index;
+};
+
+const createGameBoardSquares = (gridSquare) => {
   let loopCount = 1;
   let yAxis = 0;
+  for (let i = 0; i < gridSquare; i += 1) {
+    const squareDiv = [];
 
-  squareDiv[i] = document.createElement('div');
+    squareDiv[i] = document.createElement('div');
 
-  if (i === 0) {
-    const knightIcon = createKnight(i, yAxis);
-    squareDiv[i].appendChild(knightIcon);
-    createDragDropFunctionality(knightIcon);
+    if (i === 0) {
+      const knightIcon = createKnight(i, yAxis);
+      squareDiv[i].appendChild(knightIcon);
+      createDragDropFunctionality(knightIcon);
+    }
+
+    squareDiv[i].setAttribute('data-index', `${[i, yAxis]}`);
+    if (loopCount === 8) {
+      yAxis += 1;
+      loopCount = 1;
+    } else {
+      loopCount += 1;
+    }
+    squareDiv[i].classList.add('square_div');
+
+    squareDiv[i].addEventListener('click', addNewEndPoint);
+    gameboard.appendChild(squareDiv[i]);
   }
-
-  squareDiv[i].setAttribute('data-index', `${[i, yAxis]}`);
-  if (loopCount === 8) {
-    yAxis += 1;
-    loopCount = 1;
-  } else {
-    loopCount += 1;
-  }
-  squareDiv[i].classList.add('square_div');
-
-  squareDiv[i].addEventListener('click', (e) => {
-    removePrevEndPoint();
-
-    e.target.classList.add('endPoint');
-    e.target.style.background = 'red';
-    endPoint = e.target.dataset.index;
-  });
-  gameboard.appendChild(squareDiv[i]);
 };
 
 const createGameBoardDom = () => {
@@ -66,9 +70,6 @@ const createGameBoardDom = () => {
   gameboard.style.display = 'grid';
   gameboard.style.gridTemplateRows = `repeat(${gridSize},1fr)`;
   gameboard.style.gridTemplateColumns = `repeat(${gridSize},1fr)`;
-
-  for (let i = 0; i < gridSquare; i += 1) {
-    createGameBoardSquares(i);
-  }
+  createGameBoardSquares(gridSquare);
 };
 createGameBoardDom();
