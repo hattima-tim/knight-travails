@@ -3,7 +3,7 @@ import knightMoves from './knightTravails';
 
 const gameboard = document.querySelector('#gameboard');
 
-const createKnight = (i, yAxis) => {
+const createKnight = (xAxis, yAxis) => {
   const knightIcon = document.createElement('img');
 
   knightIcon.classList.add('knight');
@@ -13,7 +13,7 @@ const createKnight = (i, yAxis) => {
     'src',
     'https://res.cloudinary.com/du3oueesv/image/upload/v1669444959/knights-travails/chess_fc13db.png',
   );
-  knightIcon.setAttribute('data-index', `${[i, yAxis]}`);
+  knightIcon.setAttribute('data-index', `${[xAxis, yAxis]}`);
 
   return knightIcon;
 };
@@ -37,6 +37,7 @@ const addNewEndPoint = (e) => {
 
 const createGameBoardSquares = (gridSquare) => {
   let loopCount = 1;
+  let xAxis = 0;
   let yAxis = 0;
   for (let i = 0; i < gridSquare; i += 1) {
     const squareDiv = [];
@@ -49,11 +50,13 @@ const createGameBoardSquares = (gridSquare) => {
       createDragDropFunctionality(knightIcon);
     }
 
-    squareDiv[i].setAttribute('data-index', `${[i, yAxis]}`);
+    squareDiv[i].setAttribute('data-index', `${[xAxis, yAxis]}`);
     if (loopCount === 8) {
+      xAxis = 0;
       yAxis += 1;
       loopCount = 1;
     } else {
+      xAxis += 1;
       loopCount += 1;
     }
     squareDiv[i].classList.add('square_div');
