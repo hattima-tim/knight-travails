@@ -85,4 +85,14 @@ const moveKnight = (knightIcon, step, stepCount) => {
   reletadElement.textContent = `${stepCount}`;
   reletadElement.appendChild(knightIcon);
 };
+
+const removeSignOfPrevPath = () => {
+  const prevPath = document.querySelectorAll('.visited');
+  if (prevPath) {
+    prevPath.forEach((step) => {
+      step.classList.remove('visited');
+      step.firstChild.remove(); // first child is the step number text
+    });
+  }
+};
 createGameBoardDom();
