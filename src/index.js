@@ -78,4 +78,11 @@ const createGameBoardDom = () => {
   gameboard.style.gridTemplateColumns = `repeat(${gridSize},1fr)`;
   createGameBoardSquares(gridSquare);
 };
+
+const moveKnight = (knightIcon, step, stepCount) => {
+  const reletadElement = document.querySelector(`[data-index='${step}']`);
+  reletadElement.classList.add('visited');
+  reletadElement.textContent = `${stepCount}`;
+  reletadElement.appendChild(knightIcon);
+};
 createGameBoardDom();
