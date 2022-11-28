@@ -12,6 +12,9 @@
 }
 
 .square_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
 }
 
@@ -29,14 +32,19 @@
     background-color: black;
 }
 
+.black .knight{
+    background-color: red;
+}
+
 .endPoint{
     background-color: red;
 }
 
 .visited{
     background-color: gold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 1.2rem;
+}
+
+.visited .knight{
+    background-color: gold;
 }
