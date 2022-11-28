@@ -22,7 +22,6 @@ const removePrevEndPoint = () => {
   const prevEndPoint = document.querySelector('.endPoint');
   if (prevEndPoint) {
     prevEndPoint.classList.remove('endPoint');
-    prevEndPoint.style.background = 'none';
   }
 };
 
@@ -31,7 +30,6 @@ const addNewEndPoint = (e) => {
   removePrevEndPoint();
 
   e.target.classList.add('endPoint');
-  e.target.style.background = 'red';
   endPoint = e.target.dataset.index;
 };
 
