@@ -95,4 +95,20 @@ const removeSignOfPrevPath = () => {
     });
   }
 };
+
+const startButton = document.querySelector('#startButton');
+startButton.addEventListener('click', () => {
+  removeSignOfPrevPath();
+
+  const knightIcon = document.querySelector('.knight');
+  const knightPosition = knightIcon.dataset.index;
+  const knightTravailsInfo = knightMoves(knightPosition, endPoint);
+  const squaresInThePath = knightTravailsInfo.path;
+
+  squaresInThePath.forEach((step, index) => {
+    setTimeout(() => {
+      moveKnight(knightIcon, step, index);
+    }, index * 1000);
+  });
+});
 createGameBoardDom();
