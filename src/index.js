@@ -41,9 +41,14 @@ const createGameBoardSquares = (gridSquare) => {
   let yAxis = 0;
   for (let i = 0; i < gridSquare; i += 1) {
     const squareDiv = [];
-
     squareDiv[i] = document.createElement('div');
 
+    if (xAxis % 2 === 0 && yAxis % 2 !== 0) {
+      squareDiv[i].classList.add('black');
+    }
+    if (xAxis % 2 !== 0 && yAxis % 2 === 0) {
+      squareDiv[i].classList.add('black');
+    }
     if (i === 0) {
       const knightIcon = createKnight(i, yAxis);
       squareDiv[i].appendChild(knightIcon);
@@ -59,8 +64,8 @@ const createGameBoardSquares = (gridSquare) => {
       xAxis += 1;
       loopCount += 1;
     }
-    squareDiv[i].classList.add('square_div');
 
+    squareDiv[i].classList.add('square_div');
     squareDiv[i].addEventListener('click', addNewEndPoint);
     gameboard.appendChild(squareDiv[i]);
   }
