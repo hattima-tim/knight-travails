@@ -81,6 +81,9 @@ const createGameBoardDom = () => {
 
 const moveKnight = (knightIcon, step, stepCount) => {
   const reletadElement = document.querySelector(`[data-index='${step}']`);
+  // eslint-disable-next-line no-param-reassign
+  knightIcon.dataset.index = reletadElement.dataset.index;
+
   reletadElement.classList.add('visited');
   reletadElement.textContent = `${stepCount}`;
   reletadElement.appendChild(knightIcon);
