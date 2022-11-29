@@ -7,9 +7,10 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
-    "test": "jest --watchAll",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --watchAll",
     "watch": "webpack --watch"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hattima-tim/knight-travails.git"
