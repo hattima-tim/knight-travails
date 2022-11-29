@@ -2,6 +2,12 @@ body {
   background-color: #dcdad7;
 }
 
+h1{
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
 #gameboard_container {
   display: flex;
   width: 100%;
