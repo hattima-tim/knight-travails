@@ -67,3 +67,41 @@
   background: black;
   color: white;
 }
+
+dialog {
+  display: none;
+  width: 84%;
+  height: 90%;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  background-color: #dcdad7;
+}
+
+dialog > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+dialog > header > button {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background: #dcdad7;
+  border: 2px solid black;
+  font-size: 0.9rem;
+}
+
+dialog > header > button:hover{
+    background-color: black;
+    color:white;
+}
+
+@media (min-width: 720px) {
+  dialog {
+    width: 45%;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+  }
+}
