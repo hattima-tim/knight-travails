@@ -79,6 +79,19 @@ const createGameBoardDom = () => {
   createGameBoardSquares(gridSquare);
 };
 
+const aboutBtn = document.querySelector('.about');
+const dialog = document.querySelector('dialog');
+aboutBtn.addEventListener('click', () => {
+  dialog.style.display = 'block';
+  dialog.showModal();
+});
+
+const closeDialogBtn = document.querySelector('.close_dialog');
+closeDialogBtn.addEventListener('click', () => {
+  dialog.style.display = 'none';
+  dialog.close();
+});
+
 const moveKnight = (knightIcon, step, stepCount) => {
   const reletadElement = document.querySelector(`[data-index='${step}']`);
   // eslint-disable-next-line no-param-reassign
