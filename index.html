@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="gameboard_container">
-        <div id="gameboard"></div>
+      <div id="gameboard"></div>
     </div>
-    <button id="startButton">click</button>
+    <dialog>
+      <header>
+        <h3>Knights Travails</h3>
+        <button class="close_dialog">X</button>
+      </header>
+      <article>
+        This is a visual representation of a problem I had to solve as part of
+        <a href="https://www.theodinproject.com">The Odin Project</a>. The
+        problem was to write a program, that will find the shortest path a
+        knight can take, to move between two positions on a chessboard. On this
+        website, you can see the output of the program visually.
+        <h4>How does the knight move?</h4>
+        A knight's basic move is two steps forward and one step to the side. It
+        can face any direction.
+        <h4>How to get the shortest path?</h4>
+        To get the shortest path, you will have to select an endpoint/target for
+        the knight. To do this, click on any square of the board. By default,
+        the starting point is, the first square of the board. But you can change
+        this by dragging and dropping the knight on the board. After that, click
+        the travail button and see the knight traveling on the shortest path.
+      </article>
+    </dialog>
+    <div class="btn_container">
+      <button class="about">About</button>
+      <button id="startButton">click</button>
+    </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
