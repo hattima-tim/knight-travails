@@ -1,50 +1,69 @@
-#gameboard_container{
-    display: flex;
-    width: 100%;
-    height: 30rem;
-    justify-content: center;
-    align-items: center;
+#gameboard_container {
+  display: flex;
+  width: 100%;
+  height: 30rem;
+  justify-content: center;
+  align-items: center;
 }
 
-#gameboard{
-    height: 20rem;
-    width: 20rem;
+#gameboard {
+  height: 20rem;
+  width: 20rem;
 }
 
-.square_div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
+.square_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
 }
 
-.knight{
-    position: absolute;
-    width:30px;
+.knight {
+  position: absolute;
+  width: 30px;
 }
 
-.draggable{
-    touch-action: none;
-    user-select: none;
+.draggable {
+  touch-action: none;
+  user-select: none;
 }
 
-.black{
-    background-color: black;
+.black {
+  background-color: black;
 }
 
-.black .knight{
-    background-color: red;
+.black .knight {
+  background-color: red;
 }
 
-.endPoint{
-    background-color: red;
+.endPoint {
+  background-color: red;
 }
 
-.visited{
-    background-color: gold;
-    font-size: 1.2rem;
+.visited {
+  background-color: gold;
+  font-size: 1.2rem;
 }
 
-.visited .knight{
-    background-color: gold;
+.visited .knight {
+  background-color: gold;
+}
+
+.btn_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about {
+  background: none;
+  border: 2px solid black;
+  font-size: 1rem;
+}
+
+.about:hover {
+  background: black;
+  color: white;
 }
