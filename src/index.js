@@ -93,13 +93,13 @@ closeDialogBtn.addEventListener('click', () => {
 });
 
 const moveKnight = (knightIcon, step, stepCount) => {
-  const reletadElement = document.querySelector(`[data-index='${step}']`);
+  const relatedElement = document.querySelector(`[data-index='${step}']`);
   // eslint-disable-next-line no-param-reassign
-  knightIcon.dataset.index = reletadElement.dataset.index;
+  knightIcon.dataset.index = relatedElement.dataset.index;
 
-  reletadElement.classList.add('visited');
-  reletadElement.textContent = `${stepCount}`;
-  reletadElement.appendChild(knightIcon);
+  relatedElement.classList.add('visited');
+  relatedElement.textContent = `${stepCount}`;
+  relatedElement.appendChild(knightIcon);
 };
 
 const removeSignOfPrevPath = () => {
