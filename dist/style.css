@@ -1,3 +1,7 @@
+body{
+    background-color: #dcdad7;
+}
+
 #gameboard_container {
   display: flex;
   width: 100%;
